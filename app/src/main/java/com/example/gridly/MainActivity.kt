@@ -1,5 +1,6 @@
 package com.example.gridly
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -35,13 +36,13 @@ class MainActivity : AppCompatActivity() {
     
     private fun setupClickListeners() {
         loginButton.setOnClickListener {
-            // TODO: Navigate to login screen
-            Toast.makeText(this, "Login clicked - Feature coming soon!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
         
         registerButton.setOnClickListener {
-            // TODO: Navigate to registration screen
-            Toast.makeText(this, "Register clicked - Feature coming soon!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 }

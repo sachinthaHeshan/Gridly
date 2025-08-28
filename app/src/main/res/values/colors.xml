@@ -2,5 +2,19 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_alpha_60">#99FFFFFF</color>
     <color name="splash_background">#4285F4</color>
+    
+    <!-- Home page colors -->
+    <color name="home_background">#F5F5F5</color>
+    <color name="card_dark_background">#2D3748</color>
+    <color name="primary_blue">#4285F4</color>
+    <color name="text_secondary">#A0AEC0</color>
+    <color name="nav_background">#1A202C</color>
+    
+    <!-- Status colors -->
+    <color name="status_available">#10B981</color>
+    <color name="status_available_text">#10B981</color>
+    <color name="status_unavailable">#EF4444</color>
+    <color name="status_unavailable_text">#EF4444</color>
 </resources>

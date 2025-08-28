@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="200dp"
+    android:viewportWidth="400"
+    android:viewportHeight="200">
+  <!-- Background gradient -->
+  <path
+      android:fillColor="#1A202C"
+      android:pathData="M0,0h400v200h-400z"/>
+  <!-- EV Car silhouette -->
+  <path
+      android:fillColor="#4A5568"
+      android:pathData="M80,120L320,120L320,140L300,140L300,150L280,150L280,140L120,140L120,150L100,150L100,140L80,140Z"/>
+  <!-- Charging station -->
+  <path
+      android:fillColor="#4285F4"
+      android:pathData="M60,80L80,80L80,140L60,140Z"/>
+  <!-- Charging cable -->
+  <path
+      android:strokeColor="#10B981"
+      android:strokeWidth="3"
+      android:pathData="M80,100Q90,110 100,120"/>
+  <!-- Lightning bolt on station -->
+  <path
+      android:fillColor="@android:color/white"
+      android:pathData="M65,90L70,100L68,100L73,110L68,100L70,100L65,90Z"/>
+</vector>
