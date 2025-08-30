@@ -38,14 +38,12 @@ class MyChargerActivity : AppCompatActivity() {
     private fun navigateToHome() {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
-        overridePendingTransition(0, 0)
         finish()
     }
     
     private fun navigateToProfile() {
         val intent = Intent(this, ProfileActivity::class.java)
         startActivity(intent)
-        overridePendingTransition(0, 0)
         finish()
     }
 }

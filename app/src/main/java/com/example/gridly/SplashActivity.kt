@@ -21,7 +21,6 @@ class SplashActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, OnboardingActivity::class.java)
             startActivity(intent)
-            overridePendingTransition(0, 0)
             finish()
         }, 3000)
     }

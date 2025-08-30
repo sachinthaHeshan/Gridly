@@ -47,7 +47,7 @@ class OnboardingActivity : AppCompatActivity() {
             val recyclerView = field.get(viewPager) as androidx.recyclerview.widget.RecyclerView
             recyclerView.overScrollMode = androidx.recyclerview.widget.RecyclerView.OVER_SCROLL_NEVER
         } catch (e: Exception) {
-            // If reflection fails, continue without additional optimizations
+            //error
         }
     }
     
@@ -69,7 +69,6 @@ class OnboardingActivity : AppCompatActivity() {
     private fun navigateToMain() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-        overridePendingTransition(0, 0)
         finish()
     }
     

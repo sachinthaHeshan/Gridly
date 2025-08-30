@@ -14,7 +14,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
-        
         initViews()
         setupClickListeners()
     }
@@ -32,7 +31,6 @@ class LoginActivity : AppCompatActivity() {
     private fun navigateToHome() {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
-        overridePendingTransition(0, 0)
         finish()
     }
 }

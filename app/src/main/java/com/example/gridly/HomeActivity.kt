@@ -29,13 +29,11 @@ class HomeActivity : AppCompatActivity() {
         chargerNavButton.setOnClickListener {
             val intent = Intent(this, MyChargerActivity::class.java)
             startActivity(intent)
-            overridePendingTransition(0, 0)
         }
         
         profileNavButton.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
-            overridePendingTransition(0, 0)
         }
     }
 }

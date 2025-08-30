@@ -46,20 +46,17 @@ class ProfileActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
-        overridePendingTransition(0, 0)
         finish()
     }
     
     private fun navigateToHome() {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
-        overridePendingTransition(0, 0)
         finish()
     }
     
     private fun navigateToMyCharger() {
         val intent = Intent(this, MyChargerActivity::class.java)
         startActivity(intent)
-        overridePendingTransition(0, 0)
     }
 }
