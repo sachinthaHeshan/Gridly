@@ -2,17 +2,13 @@ package com.example.gridly
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.button.MaterialButton
-
 
 class OnboardingActivity : AppCompatActivity() {
     
@@ -25,12 +21,6 @@ class OnboardingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_onboarding)
-        
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.onboarding_main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
         
         initViews()
         setupViewPager()
@@ -47,47 +37,40 @@ class OnboardingActivity : AppCompatActivity() {
         adapter = OnboardingPagerAdapter(this)
         viewPager.adapter = adapter
         
-        // Listen to page changes
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                updateUI(position)
-            }
-        })
+        // Disable page change animations
+        viewPager.setPageTransformer(null)
+        viewPager.isUserInputEnabled = true
+        // Remove any default page transformer animations by reducing animation duration
+        try {
+            val field = ViewPager2::class.java.getDeclaredField("mRecyclerView")
+            field.isAccessible = true
+            val recyclerView = field.get(viewPager) as androidx.recyclerview.widget.RecyclerView
+            recyclerView.overScrollMode = androidx.recyclerview.widget.RecyclerView.OVER_SCROLL_NEVER
+        } catch (e: Exception) {
+            // If reflection fails, continue without additional optimizations
+        }
     }
     
     private fun setupClickListeners() {
         skipButton.setOnClickListener {
-            navigateToMainActivity()
+            navigateToMain()
         }
         
         nextButton.setOnClickListener {
             if (viewPager.currentItem < adapter.itemCount - 1) {
-                viewPager.currentItem += 1
+                // Disable smooth scrolling animation for instant page change
+                viewPager.setCurrentItem(viewPager.currentItem + 1, false)
             } else {
-                navigateToMainActivity()
+                navigateToMain()
             }
         }
     }
     
-    private fun updateUI(position: Int) {
-        when (position) {
-            adapter.itemCount - 1 -> {
-                nextButton.text = "Get Started"
-                skipButton.visibility = View.GONE
-            }
-            else -> {
-                nextButton.text = "Next"
-                skipButton.visibility = View.VISIBLE
-            }
-        }
-    }
-    
-    private fun navigateToMainActivity() {
+    private fun navigateToMain() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(0, 0)
         finish()
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
     
     private class OnboardingPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {

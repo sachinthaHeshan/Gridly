@@ -342,11 +342,11 @@
 
         <!-- Charger Nav -->
         <ImageView
-            android:id="@+id/nav_history"
+            android:id="@+id/nav_charger"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/ic_my_charger"
-            android:contentDescription="History"
+            android:contentDescription="Charger"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -364,7 +364,7 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/nav_history"
+            app:layout_constraintEnd_toStartOf="@id/nav_charger"
             app:layout_constraintStart_toEndOf="@id/nav_home"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -377,9 +377,10 @@
             android:contentDescription="Profile"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="4dp"
+            android:tint="@color/primary_blue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/nav_settings"
-            app:layout_constraintStart_toEndOf="@id/nav_history"
+            app:layout_constraintStart_toEndOf="@id/nav_charger"
             app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Settings Nav -->

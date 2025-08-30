@@ -38,14 +38,7 @@ class OnboardingFragment : Fragment() {
         val titleTextView = view.findViewById<TextView>(R.id.onboarding_title)
         val descriptionTextView = view.findViewById<TextView>(R.id.onboarding_description)
         
-        // Set the image with fallback
-        if (imageResId != 0) {
-            imageView.setImageResource(imageResId)
-        } else {
-            // Fallback to a default image
-            imageView.setImageResource(R.drawable.ic_launcher_background)
-        }
-        
+        imageView.setImageResource(imageResId)
         titleTextView.text = title
         descriptionTextView.text = description
     }
