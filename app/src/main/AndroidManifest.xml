@@ -40,6 +40,21 @@
             android:name=".HomeActivity"
             android:exported="false"
             android:theme="@style/Theme.Gridly.NoActionBar" />
+        
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Gridly.NoActionBar" />
+        
+        <activity
+            android:name=".MyChargerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Gridly.NoActionBar" />
+        
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Gridly.NoActionBar" />
     </application>
 
 </manifest>
